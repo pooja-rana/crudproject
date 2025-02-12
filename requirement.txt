@@ -1,0 +1,15 @@
+# **Django Rest Framework** is used for REST API
+# See https://www.django-rest-framework.org/
+djangorestframework==3.15.2
+
+# **psycopg2-binary**
+# See https://www.psyc
+psycopg2-binary==2.9.3
+
+# **environs** is used for read the environs variable.
+# See https://pypi.org/project/environs/
+environs==11.0.0
+
+# **Django** is use for webserver
+# See https://www.djangoproject.com/start/
+Django==4.2.14
