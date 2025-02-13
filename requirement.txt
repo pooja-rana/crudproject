@@ -13,3 +13,8 @@ environs==11.0.0
 # **Django** is use for webserver
 # See https://www.djangoproject.com/start/
 Django==4.2.14
+
+
+# **Pillow** is use for image
+# See https://pypi.org/project/pillow/
+Pillow==11.1.0
