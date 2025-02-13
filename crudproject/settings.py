@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 from environs import Env
 env = Env()
@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-gtqnps@i2-z^t0bl=frc**4n=b87=u(%-r*u-jkls*9ss94@_w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crudapp'
+    'rest_framework',
+    'rest_framework.authtoken',
+    'crudapp',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +88,13 @@ DATABASES = {
         'HOST': env.str("POSTGRES_HOST"),
         'PORT': env.str("POSTGRES_PORT"),
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
 
