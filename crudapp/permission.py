@@ -6,4 +6,4 @@ class IsAdmin(BasePermission):
 
 class IsNormalUserOrAdmin(BasePermission):
     def has_object_permission(self, request, view, obj):
-        return request.user and request.user.role == 2
+        return obj.id == request.user.id and request.user.role == 2
