@@ -18,3 +18,8 @@ Django==4.2.14
 # **Pillow** is use for image
 # See https://pypi.org/project/pillow/
 Pillow==11.1.0
+
+
+# **django-cors-headers** is used for allows your resources to be accessed on other domains.
+# see https://pypi.org/project/django-cors-headers/
+django-cors-headers==3.13.0

@@ -1,11 +1,10 @@
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 from crudapp.models import User
 from crudapp.permission import IsAdmin, IsNormalUserOrAdmin
 from crudapp.serializers import UserDetailSerializer, RetrieveUserDetailsSerializer
-
+from crudapp.authentication import TokenAuthentication
 
 class UserViewSet(ModelViewSet):
     """This viewsets is used for the crud operation of user and admin"""
@@ -17,7 +16,7 @@ class UserViewSet(ModelViewSet):
             return [IsAdmin()]
         if self.action == 'retrieve':
             return [IsNormalUserOrAdmin()]
-        return [IsAuthenticated()]
+        return []
 
     def get_serializer_class(self):
         if self.action == 'create':

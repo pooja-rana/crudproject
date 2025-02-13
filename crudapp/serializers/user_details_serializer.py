@@ -69,12 +69,10 @@ class UserDetailSerializer(serializers.ModelSerializer):
             'id', 'profile_pic', 'name', 'cell_number', 'email', 'password','role',
         )
 
-    def save(self, **kwargs):
-        user = super(UserDetailSerializer, self).save(**kwargs)
-        user_password = self.validated_data.get('password', '')
-        if user_password:
-            user.set_password(user_password)
-            user.save()
+    def create(self, validated_data):
+        user = User(**validated_data)
+        user.set_password(validated_data['password'])
+        user.save()
         return user
 
 
@@ -84,6 +82,6 @@ class RetrieveUserDetailsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'profile_pic', 'name', 'cell_number', 'email', 'role', 'created', 'modified')
+        fields = ('id', 'profile_pic', 'name', 'cell_number', 'email', 'role', 'created_at', 'modified')
 
 

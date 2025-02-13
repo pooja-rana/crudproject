@@ -10,3 +10,6 @@ class AccessToken(models.Model):
     token_time_limit = models.IntegerField(default=30000)
     user = models.ForeignKey("User", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def is_expired(self):
+        return self.created_at + timezone.timedelta(milliseconds=self.token_time_limit) < timezone.now()
