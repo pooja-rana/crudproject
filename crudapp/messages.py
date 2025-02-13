@@ -9,3 +9,5 @@ class CrudOperationMessages:
                        "and 1 Lowercase. "
     EMAIL_ALREADY_EXISTS = "This email already exists"
     CELL_NUM_ALREADY_EXISTS = "Cell num already exists."
+    INVALID_CREDENTIALS = "Invalid credentials."
+    INVALID_TOKEN = "Invalid token"

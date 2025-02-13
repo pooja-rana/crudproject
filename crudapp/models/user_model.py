@@ -18,6 +18,13 @@ class User(AbstractUser):
 
     USERNAME_FIELD = 'cell_number'
 
+    def set_password(self, raw_password):
+        self.password = bcrypt.hashpw(raw_password.encode(), bcrypt.gensalt()).decode()
+
+    def check_password(self, raw_password):
+        return bcrypt.checkpw(raw_password.encode('utf-8'), self.password.encode('utf-8'))
+
+
     def __str__(self):
         """ name of each user """
-        return self.cell_number
+        return self.name
