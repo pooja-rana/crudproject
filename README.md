@@ -11,17 +11,17 @@ This project provides a Django REST Framework (DRF)-based API for user managemen
 
 ## API Endpoints
 ### Authentication
-- **POST** `/api/users/login/` - User login (requires `cell_number` and `password`)
+- **POST** `/user/login/` - User login (requires `cell_number` and `password`)
 
 ### Admin Only
-- **POST** `/api/users/` - Create a new user
-- **GET** `/api/users/<id>/` - Retrieve user details
-- **PATCH** `/api/users/<id>/` - Update user details
-- **DELETE** `/api/users/<id>/` - Delete a user
-- **GET** `/api/users/` - List all users
+- **POST** `/users/` - Create a new user
+- **GET** `/users/<id>/` - Retrieve user details
+- **PATCH** `/users/<id>/` - Update user details
+- **DELETE** `/users/<id>/` - Delete a user
+- **GET** `/users/` - List all users
 
 ### Normal User Access
-- **GET** `/api/users/<id>/` - Retrieve their own profile details
+- **GET** `/users/<id>/` - Retrieve their own profile details
 
 ---
 ## Installation Guide
