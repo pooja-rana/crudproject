@@ -82,7 +82,7 @@ $ python manage.py runserver
 ```
 
 ### 9️⃣ Access the API
-- Open `http://127.0.0.1:8000/api/users/`
+- Open `http://127.0.0.1:8000/users/`
 - Use Postman or `curl` to test API endpoints
 
 ---
